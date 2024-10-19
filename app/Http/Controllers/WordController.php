@@ -18,4 +18,14 @@ class WordController extends Controller
         $Word_Show = Word::get();
         return view('show', compact('Word_Show'));// compact関数を使用することでスマートに記述
     }
+    public function delete($id)
+{
+    $word = Word::find($id);
+
+    if ($word) {
+        $word->delete();
+    }
+
+    return redirect('/show'); // 削除後、一覧ページにリダイレクト
+}
 }

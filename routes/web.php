@@ -12,3 +12,5 @@ Route::get('/add', function () {
 Route::post('/add', [WordController::class, 'add']);
 
 Route::get('/show', [WordController::class, 'show']);
+Route::delete('/delete/{id}', [WordController::class, 'delete'])->name('word.delete');
+
